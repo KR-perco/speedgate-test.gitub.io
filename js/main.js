@@ -3,7 +3,9 @@ MOCK_URL_SOURCE = [
     "hDqq4LalRAUiQ",
     "yjTccXlnh6LXW",
     "3FjEPbKqEPhPpmC8uY",
-    "3ohs7NLUXtNW98mtIQ"
+    "3ohs7NLUXtNW98mtIQ",
+    "9U8wVRThbHWA8ADPa2",
+    "3og0IvJaagEkDMbRi8",
 ];
 
 randomItem = () => {
@@ -49,8 +51,8 @@ async function asyncVideo(video) {
     const awaitedVid = await startPlayback(video).then(function() {
         console.log('The play() Promise fulfilled! Rock on!');
         video.oncanplaythrough = () => video.classList.remove("is-loading");
-        // video.pause();
-        // console.log("pause из playPromise-asyncVidLoad");
+        video.pause();
+        console.log("pause из playPromise-asyncVidLoad");
     }).catch(error => {
         console.log('The play() Promise rejected!');
         console.log('Use the Play button instead.');
